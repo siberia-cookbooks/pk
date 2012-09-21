@@ -30,9 +30,20 @@ execute "git-submodule-init" do
   action :nothing
 end
 
+execute "git-pk-add-upstream" do
+  command "cd /opt/pk && git add upstream git://github.com/mamash/pk.git"
+  action :nothing
+end
+
+execute "git-pkgsrc-add-upstream" do
+  command "cd /opt/pkgsrc && git add upstream git://github.com/joyent/pkgsrc.git"
+  action :nothing
+end
+
 execute "git-clone-pkgsrc" do
   command "cd /opt && git clone -b #{node[:pk][:pkgsrc_release]} #{node[:pk][:repos][:pkgsrc]}"
   not_if "test -d /opt/pkgsrc"
+  notifies :run, "execute[git-pkgsrc-add-upstream]", :immediately
   notifies :run, "execute[git-fix-submodules]", :immediately
   notifies :run, "execute[git-submodule-init]", :immediately
 end
@@ -40,4 +51,5 @@ end
 execute "git-clone-pk" do
   command "cd /opt && git clone -b #{node[:pk][:pkgsrc_release]} #{node[:pk][:repos][:pk]}"
   not_if "test -d /opt/pk"
+  notifies :run, "execute[git-pk-add-upstream]", :immediately
 end
