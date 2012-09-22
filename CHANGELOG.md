@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of pk.
 
+## 0.0.2:
+
+* Use URLs one can push to in the default attributes
+* Add upstream for repos
+
 ## 0.0.1:
 
 * Initial release of pk
