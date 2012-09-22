@@ -20,11 +20,6 @@
   end
 end
 
-execute "git-fix-submodules" do
-  command "cd /opt/pkgsrc && gsed -i'' -e '/mamash/s/mamash/joyent/g' .gitmodules"
-  action :nothing
-end
-
 execute "git-submodule-init" do
   command "cd /opt/pkgsrc && git submodule init && git submodule update"
   action :nothing
@@ -56,7 +51,6 @@ execute "git-clone-pkgsrc" do
   notifies :run, "execute[git-pkgsrc-add-upstream]", :immediately
   notifies :run, "execute[git-pkgsrc-joyent-add-upstream]", :immediately
   notifies :run, "execute[git-pkgsrc-wip-add-upstream]", :immediately
-  notifies :run, "execute[git-fix-submodules]", :immediately
   notifies :run, "execute[git-submodule-init]", :immediately
 end
 
