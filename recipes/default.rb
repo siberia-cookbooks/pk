@@ -40,10 +40,22 @@ execute "git-pkgsrc-add-upstream" do
   action :nothing
 end
 
+execute "git-pkgsrc-joyent-add-upstream" do
+  command "cd /opt/pkgsrc/joyent && git add upstream git://github.com/joyent/pkgsrc-joyent.git"
+  action :nothing
+end
+
+execute "git-pkgsrc-wip-add-upstream" do
+  command "cd /opt/pkgsrc/wip && git add upstream git://github.com/joyent/pkgsrc-joyent.git"
+  action :nothing
+end
+
 execute "git-clone-pkgsrc" do
   command "cd /opt && git clone -b #{node[:pk][:pkgsrc_release]} #{node[:pk][:repos][:pkgsrc]}"
   not_if "test -d /opt/pkgsrc"
   notifies :run, "execute[git-pkgsrc-add-upstream]", :immediately
+  notifies :run, "execute[git-pkgsrc-joyent-add-upstream]", :immediately
+  notifies :run, "execute[git-pkgsrc-wip-add-upstream]", :immediately
   notifies :run, "execute[git-fix-submodules]", :immediately
   notifies :run, "execute[git-submodule-init]", :immediately
 end
