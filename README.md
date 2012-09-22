@@ -20,7 +20,7 @@ Attributes
 
  * pk.pkgsrc_release - git branch used for the pkgsrc release
  * pk.repos.pk - points to the clone I am using
- * pk.repos.pkgsrc - points to Joyent pkgsrc repo
+ * pk.repos.pkgsrc - points to Joyent pkgsrc repo or your fork on GitHub
 
 Example JSON:
 
@@ -33,6 +33,11 @@ Example JSON:
         }
       }
     }
+
+If you have your own forks of pk, pkgsrc, pkgsrc-joyent and/or pkgsrc-wip,
+you most likely want to rather refer to your forks by updating the
+git submodules on your fork and using git@github.com:yourname/pkgsrc.git
+and git@github.com:yourname/pk.git
 
 Usage
 =====
