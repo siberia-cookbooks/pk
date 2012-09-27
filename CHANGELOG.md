@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of pk.
 
+## 0.0.4:
+
+* Defaults to pkgsrc 2012Q2 branch
+* Fixed upstreams for repos
+* For 2012Q2 on pk we need to use the master branch
+* Fixed typos in default attribute git urls
+
 ## 0.0.3:
 
 * No longer required to fix submodules - Filip fixed that in

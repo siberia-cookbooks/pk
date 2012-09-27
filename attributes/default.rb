@@ -8,9 +8,9 @@
 #
 
 default['pk'] = {
-  'pkgsrc_release' => 'pkgsrc_2012Q1',
+  'pkgsrc_release' => 'pkgsrc_2012Q2',
   'repos' => {
-    'pk' => 'git@github.com/textdrive/pk.git',
-    'pkgsrc' => 'git@github.com/textdrive/pkgsrc.git'
+    'pk' => 'git@github.com:textdrive/pk.git',
+    'pkgsrc' => 'git@github.com:textdrive/pkgsrc.git'
   }
 }
