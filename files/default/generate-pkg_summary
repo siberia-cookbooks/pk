@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Generates the pkg_summary.gz file
+#
+
+if [[ "$1" == "-v" ]]; then
+    shift;
+    export PS4='${BASH_SOURCE}:${LINENO}: ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
+    set -o xtrace
+fi
+set -o errexit
+set -o pipefail
+
+QUARTERLY=2012Q2
+ARCH=i386
+
+cd /opt/pk/packages/${QUARTERLY}/${ARCH}/All
+for a in *.tgz; do /opt/local/sbin/pkg_info -X $a >> pkg_summary; done
+rm pkg_summary.gz
+/opt/local/bin/gzip -9 pkg_summary
