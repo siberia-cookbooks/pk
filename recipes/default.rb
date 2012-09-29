@@ -69,3 +69,10 @@ execute "git-clone-pk" do
   not_if "test -d /opt/pk"
   notifies :run, "execute[git-pk-remote-add-upstream]", :immediately
 end
+
+cookbook_file "/opt/pk/bin/generate-pkg_summary" do
+  source "generate-pkg_summary"
+  owner "root"
+  group "wheel"
+  mode "0600"
+end

@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of pk.
 
+## 0.0.5:
+
+* Deploy generate-pkg_summary to /opt/pkg/bin
+
 ## 0.0.4:
 
 * Defaults to pkgsrc 2012Q2 branch
