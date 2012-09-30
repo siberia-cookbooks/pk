@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of pk.
 
+## 0.0.6:
+
+* Change over to use subscribes instead of notifies.
+* Use git resource for checking out vs our executes
+
 ## 0.0.5:
 
 * Deploy generate-pkg_summary to /opt/pkg/bin
