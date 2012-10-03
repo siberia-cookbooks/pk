@@ -82,3 +82,10 @@ cookbook_file "/opt/pk/bin/generate-pkg_summary" do
   group "wheel"
   mode "0600"
 end
+
+cookbook_file "/root/.pkrc" do
+  source ".pkrc"
+  owner "root"
+  group "root"
+  mode "0600"
+end
