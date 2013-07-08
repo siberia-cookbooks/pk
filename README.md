@@ -55,11 +55,11 @@ Example JSON:
 
 ```json
 {
-  'pk': {
-    'pkgsrc_release' => 'pkgsrc_2012Q2',
-    'repos' => {
-      'pk' => 'git://github.com/mamash/pk.git',
-      'pkgsrc' => 'git://github.com/joyent/pkgsrc.git'
+  "pk": {
+    "pkgsrc_release": "pkgsrc_2012Q2",
+    "repos": {
+      "pk": "git://github.com/mamash/pk.git",
+      "pkgsrc": "git://github.com/joyent/pkgsrc.git"
     }
   }
 }
