@@ -8,21 +8,48 @@ account where Filip moved them to (pkgsrc-joyent and pkgsrc-wip).
 It is recommended that you fork the pk repo on GitHub to your
 GitHub account and reference that in the attributes.
 
+WARNING: Joyent is no longer using pk and I am the last man standing
+using pk.  I am going to look at switching over to pbulk at some
+point in the future.
+
 Requirements
-============
+------------
 
  * Chef
  * Git
  * Internet Access
 
 Attributes
-==========
+----------
 
-
-
- * pk.pkgsrc_release - git branch used for the pkgsrc release
- * pk.repos.pk - points to the clone I am using
- * pk.repos.pkgsrc - points to Joyent pkgsrc repo or your fork on GitHub
+e.g.
+#### pk::default
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><tt>['pk']['pkgsrc_release']</tt></td>
+    <td>String</td>
+    <td>git branch used for the pkgsrc release</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td><tt>['pk']['repos']['pk']</tt></td>
+    <td>String</td>
+    <td>points to the clone which I am using</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td><tt>['pk']['repos']['pkgsrc']</tt></td>
+    <td>String</td>
+    <td>points to the Joyent pkgsrc repo or your fork on GitHub</td>
+    <td>false</td>
+  </tr>
+</table>
 
 Example JSON:
 
