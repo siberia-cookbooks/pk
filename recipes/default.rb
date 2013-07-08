@@ -15,7 +15,7 @@
   gcc47
   scmgit-base
 }.each do |p|
-  package "#{p}" do
+  package p do
     action :install
   end
 end
@@ -55,8 +55,8 @@ execute "git-pkgsrc-wip-remote-add-upstream" do
 end
 
 git "/opt/pkgsrc" do
-  repository "#{node[:pk][:repos][:pkgsrc]}"
-  reference "#{node[:pk][:pkgsrc_release]}"
+  repository node[:pk][:repos][:pkgsrc]
+  reference node[:pk][:pkgsrc_release]
   user "root"
   group "root"
   action :checkout
@@ -64,11 +64,11 @@ git "/opt/pkgsrc" do
 end
 
 git "/opt/pk" do
-  repository "#{node[:pk][:repos][:pk]}"
+  repository node[:pk][:repos][:pk]
   if node[:pk][:pkgsrc_release] == "pkgsrc_2012Q2"
     reference "master"
   else
-    reference "#{node[:pk][:pkgsrc_release]}"
+    reference node[:pk][:pkgsrc_release]
   end
   user "root"
   group "root"
