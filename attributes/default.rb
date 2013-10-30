@@ -8,7 +8,7 @@
 #
 
 default['pk'] = {
-  'pkgsrc_release' => 'pkgsrc_2012Q2',
+  'pkgsrc_release' => 'joyent/release/2013Q2',
   'repos' => {
     'pk' => 'git@github.com:textdrive/pk.git',
     'pkgsrc' => 'git@github.com:textdrive/pkgsrc.git'
