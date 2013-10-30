@@ -83,10 +83,11 @@ end
 
 git "/opt/pk" do
   repository node['pk']['repos']['pk']
-  if node['pk']['pkgsrc_release'] == "pkgsrc_2012Q2"
+  release = node['pk']['pkgsrc_release'].gsub(/joyent\/release\//, '')
+  if release == "2012Q2"
     reference "master"
   else
-    reference node['pk']['pkgsrc_release']
+    reference "pkgsrc_#{release}"
   end
   user "root"
   group "root"
