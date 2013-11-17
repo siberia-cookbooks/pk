@@ -1,5 +1,5 @@
-pk Cookbook [![Build Status](https://www.travis-ci.org/siberia-cookbooks/pk.png?branch=master)](https://www.travis-ci.org/siberia-cookbooks/pk)
-===============================================================================================================================================
+pk Cookbook [![Build Status](https://travis-ci.org/siberia-cookbooks/pk.png?branch=master)](https://www.travis-ci.org/siberia-cookbooks/pk)
+===========================================================================================================================================
 
 Checks out the pk repo from GitHub and the Joyent pkgsrc repo
 and fixes up the git submodules to point to Joyents GitHub
