@@ -98,7 +98,7 @@ end
 cookbook_file "/opt/pk/bin/generate-pkg_summary" do
   source "generate-pkg_summary"
   owner "root"
-  group "wheel"
+  group "root"
   mode "0600"
 end
 
