@@ -108,3 +108,10 @@ cookbook_file "/root/.pkrc" do
   group "root"
   mode "0600"
 end
+
+cookbook_file "/opt/local/etc/mk.conf" do
+  source "mk.conf"
+  owner "root"
+  group "root"
+  mode "0644"
+end
